@@ -6,10 +6,25 @@ import IconAntDesign from "react-native-vector-icons/AntDesign";
 import IconFontisto from "react-native-vector-icons/Fontisto";
 import Landing from "../screens/landing";
 import UpdateProfile from "../screens/update-profile";
+import Reclamation from "../screens/reclamation";
 
 const LandingNav = createStackNavigator(
   {
     Landing: Landing,
+  },
+  {
+    defaultNavigationOptions: {
+      headerStyle: {
+        backgroundColor: "#0086c3",
+      },
+      headerTintColor: "white",
+    },
+  }
+);
+
+const ReclamationNav = createStackNavigator(
+  {
+    Reclamation: Reclamation,
   },
   {
     defaultNavigationOptions: {
@@ -39,6 +54,15 @@ const AppNav = createMaterialBottomTabNavigator(
   {
     Acceuil: {
       screen: LandingNav,
+      navigationOptions: {
+        tabBarIcon: (tabInfo) => {
+          return <IconAntDesign name="home" size={25} color="#fafafa" />;
+        },
+        tabBarColor: "#0086c3",
+      },
+    },
+    Reclamation: {
+      screen: ReclamationNav,
       navigationOptions: {
         tabBarIcon: (tabInfo) => {
           return <IconAntDesign name="home" size={25} color="#fafafa" />;
