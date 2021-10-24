@@ -24,7 +24,7 @@ const Reclamation = (props) => {
 
   const submit = async () => {
     let response = await fetch(
-      "http://192.168.1.10:5000/api/reclamation/ajoutreclamation",
+      "http://192.168.1.46:5000/api/reclamation/ajoutreclamation",
       {
         method: "POST",
         headers: {
