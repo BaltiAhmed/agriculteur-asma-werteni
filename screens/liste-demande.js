@@ -23,7 +23,7 @@ const ListDemande = (props) => {
     setRefreshing(true);
     wait(2000).then(() => setRefreshing(false));
     const sendRequest = async () => {
-      const response = await fetch(`http://192.168.1.46:5000/api/demande/agriculteur/${auth.userId}`);
+      const response = await fetch(`http://192.168.1.185:5000/api/demande/agriculteur/${auth.userId}`);
 
       const responseData = await response.json();
       if (!response.ok) {
@@ -39,7 +39,7 @@ const ListDemande = (props) => {
 
   useEffect(() => {
     const sendRequest = async () => {
-      const response = await fetch(`http://192.168.1.46:5000/api/demande/agriculteur/${auth.userId}`);
+      const response = await fetch(`http://192.168.1.185:5000/api/demande/agriculteur/${auth.userId}`);
 
       const responseData = await response.json();
       if (!response.ok) {
@@ -73,7 +73,7 @@ const ListDemande = (props) => {
               <View>
                 <View style={{ ...styles.MealRow, ...styles.mealHeader }}>
                   <ImageBackground
-                    source={{ uri: `http://192.168.1.46:5000/${row.image}` }}
+                    source={{ uri: `http://192.168.1.185:5000/${row.image}` }}
                     style={styles.bgImage}
                   >
                     <Text style={styles.title}>{props.type}</Text>
